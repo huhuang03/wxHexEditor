@@ -1,7 +1,8 @@
 WXCONFIG ?= wx-config
 HOST=
-OPT_FLAGS += -fopenmp
-LIBS += -lgomp
+# OPT_FLAGS += -fopenmp
+# LIBS += -lgomp
+CXXFLAGS += -std=c++11
 WXCXXFLAGS= `$(WXCONFIG) --cxxflags` -Iudis86 -Imhash/include -MMD -Wall -O2 -DNDEBUG
 WXLDFLAGS = `$(WXCONFIG) --libs` `$(WXCONFIG) --libs aui` `$(WXCONFIG) --libs core`
 #add this ldflags for WinConsole  "-Wl,--subsystem,console -mconsole" for win-debug
